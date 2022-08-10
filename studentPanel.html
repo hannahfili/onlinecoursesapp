@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>E-kursy.pl panel studenta</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light d-flex flex-column">
+        <a class="navbar-brand border border-info rounded-pill bg-info text-white fw-bold m-3 p-3" href="#"
+            id="student-panel-page-name">Witaj, </a>
+        <div class="w-100 bg-primary" id="navbarSupportedContent">
+            <ul class="navbar-nav m-3 d-flex flex-column justify-content-center align-items-center">
+                <li class="nav-item active m-2 text-center w-100">
+                    <button class="w-50 btn btn-info text-white fw-bold w-50" id="student-panel-main-menu">Menu
+                        główne</button>
+                </li>
+                <li class="nav-item active m-2 text-center w-100">
+                    <button class="btn btn-info text-white fw-bold w-50" id="student-panel-set-meeting-button">Umów
+                        konsultację z
+                        nauczycielem</button>
+                </li>
+                <li class="nav-item nav-item active m-2 text-center w-100">
+                    <button class="btn btn-info text-white fw-bold w-50" id="student-panel-all-courses">Wszystkie
+                        kursy</button>
+                </li>
+                <li class="nav-item nav-item active m-2 text-center w-100">
+                    <button class="btn btn-info text-white fw-bold w-50" id="student-panel-check-deposit-button">Moje
+                        opłaty</button>
+                </li>
+                <li class="nav-item active m-2 text-center w-100">
+                    <button class="btn btn-info text-white fw-bold w-50" id="student-panel-my-account-data">Moje
+                        dane</button>
+                </li>
+
+                <li class="nav-item active m-2 text-center w-100">
+                    <button class="btn btn-warning fw-bold w-50" id="student-panel-page-access-timeout"></button>
+                </li>
+                <li class="nav-item active m-2 text-center w-100">
+                    <button class="btn btn-info text-white fw-bold w-50" id="student-panel-log-out">Wyloguj się</button>
+                </li>
+                <!-- id="student-panel-page-access-timeout" -->
+
+            </ul>
+        </div>
+    </nav>
+    <div id="student-panel-main-container">
+        <div id="student-panel-set-meetings-div" style="visibility: hidden">
+            <div class="d-flex flex-column align-items-center justify-content-center m-2"
+                id="student-panel-select-teacher-div" style="visibility: hidden">
+                <label for="student-panel-select-teacher-to-meet">Wybierz nauczyciela, z którym chcesz odbyć
+                    konsultację</label>
+                <select id="student-panel-select-teacher-to-meet">
+
+                </select>
+                <button class="btn btn-info text-white fw-bold m-2"
+                    id="student-panel-select-teacher-to-meet-submit-button">Pokaż grafik nauczyciela</button>
+                <div id="student-panel-select-teacher-to-meet-error"></div>
+            </div>
+
+            <div class="d-flex flex-column justify-content-center align-items-center table-responsive" id="student-panel-week-timetable" style="visibility: hidden">
+                    <div class="d-flex w-25 justify-content-between align-items-center">
+                        <input class="w-25" id="student-panel-previous-week-button" type="image"
+                            src="https://3qyn4234.directus.app/assets/af4e8886-cb77-47d4-accd-8506bde5e269?key=actual-size" />
+                        <input class="w-25" id="student-panel-next-week-button" type="image"
+                            src="https://3qyn4234.directus.app/assets/eb022782-c955-4598-ab4c-2152c5b96af0?key=actual-size" />
+                    </div>
+                    <div id="student-panel-week-name">
+                    </div>
+                <table id="student-panel-week-timetable-table" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="min-w-25" id="student-panel-week-hours">Godziny</th>
+                            <th class="min-w-25 student-panel-week-day" id="student-panel-week-monday">Poniedziałek
+                            </th>
+                            <th class="min-w-25 student-panel-week-day" id="student-panel-week-tuesday">Wtorek</th>
+                            <th class="min-w-25 student-panel-week-day" id="student-panel-week-wednesday">Środa</th>
+                            <th class="min-w-25 student-panel-week-day" id="student-panel-week-thursday">Czwartek
+                            </th>
+                            <th class="min-w-25 student-panel-week-day" id="student-panel-week-friday">Piątek</th>
+                            <th class="min-w-25 student-panel-week-day" id="student-panel-week-saturday">Sobota</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="student-panel-week-day-indicator-hour" id="student-panel-timetable-hour-1">
+                                8:00 -
+                                9:30
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-monday-1"></td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-tuesday-1">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-wednesday-1">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-thursday-1">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-friday-1"></td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-saturday-1">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="student-panel-week-day-indicator-hour" id="student-panel-timetable-hour-2">
+                                9:45 -
+                                11:15
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-monday-2"></td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-tuesday-2">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-wednesday-2">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-thursday-2">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-friday-2"></td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-saturday-2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="student-panel-week-day-indicator-hour" id="student-panel-timetable-hour-3">
+                                11:30
+                                -
+                                13:00
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-monday-3"></td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-tuesday-3">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-wednesday-3">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-thursday-3">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-friday-3"></td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-saturday-3">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="student-panel-week-day-indicator-hour" id="student-panel-timetable-hour-4">
+                                13:15
+                                -
+                                14:45
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-monday-4"></td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-tuesday-4">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-wednesday-4">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-thursday-4">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-friday-4"></td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-saturday-4">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="student-panel-week-day-indicator-hour" id="student-panel-timetable-hour-1">
+                                15:00
+                                -
+                                16:30
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-monday-5"></td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-tuesday-5">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-wednesday-5">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-thursday-5">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-friday-5"></td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-saturday-5">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="student-panel-week-day-indicator-hour" id="student-panel-timetable-hour-6">
+                                16:45
+                                -
+                                18:15
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-monday-6"></td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-tuesday-6">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-wednesday-6">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-thursday-6">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-friday-6"></td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-saturday-6">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="student-panel-week-day-indicator-hour" id="student-panel-timetable-hour-7">
+                                18:30
+                                -
+                                20:00
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-monday-7"></td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-tuesday-7">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-wednesday-7">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-thursday-7">
+                            </td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-friday-7"></td>
+                            <td class="student-panel-week-day-indicator" id="student-panel-timetable-saturday-7">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+        <div class="" id="student-panel-my-deposits" style="visibility: hidden">
+            <div class="text-center fw-bold m-1" id="student-panel-my-deposits-platform-access-timeout">
+
+            </div>
+            <div class="text-center fw-bold m-1" id="student-panel-my-deposits-my-balance">
+
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center m-2">
+                <button class="btn btn-info text-white fw-bold m-2"
+                    id="student-panel-prolong-platform-access-timeout">Wpłać
+                    10zł, aby przedłużyć ważność konta o
+                    miesiąc</button>
+                <button class="btn btn-info text-white fw-bold m-2" id="student-panel-top-up-account">Doładuj
+                    konto</button>
+            </div>
+
+            <div class="table-responsive mt-2" id="student-panel-my-deposits-all-deposits-done">
+                <table id="student-panel-my-deposits-table" class="table  table-bordered">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th class="min-w-25" id="student-panel-my-deposits-table-datetime">Data i godzina przelewu
+                            </th>
+                            <th class="min-w-25" id="student-panel-my-deposits-table-title">Tytuł przelewu</th>
+                            <th class="min-w-25" id="student-panel-my-deposits-table-sender">Nadawca przelewu</th>
+                            <th class="min-w-25" id="student-panel-my-deposits-table-receiver">Odbiorca przelewu</th>
+                            <th class="min-w-25" id="student-panel-my-deposits-table-receiver-sum">Kwota</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-danger" id="student-panel-my-deposits-table-all-transfers">
+                        <!-- ŁADOWANIE PRZELEWÓW Z BAZY DANYCH -->
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+
+        <div class="d-flex flex-column justify-content-center align-items-center" id="student-panel-my-account-data-div"
+            style="visibility:hidden">
+            <div class="fw-bold" id="student-panel-my-account-data-div-name-place">
+                Twoje dane:
+            </div>
+            <div id="student-panel-my-account-main-container">
+                <form action="" id="student-panel-my-account-form">
+                    <label for="student-panel-my-account-email">E-mail</label><br>
+                    <input class="w-100" id="student-panel-my-account-email" name="student-panel-my-account-email"><br>
+                    <div class="error" id="student-panel-my-account-email-error"></div>
+
+                    <label for="student-panel-my-account-password">Hasło</label><br>
+                    <input class="w-100" type="password" id="student-panel-my-account-password"
+                        name="student-panel-my-account-password"><br>
+                    <div class="error" id="student-panel-my-account-password-error"></div>
+
+                    <label for="student-panel-my-account-password-2">Potwierdź hasło</label><br>
+                    <input class="w-100" type="password" id="student-panel-my-account-password-2"
+                        name="student-panel-my-account-password-2"><br>
+                    <div class="error" id="student-panel-my-account-password2-error"></div>
+
+                    <label for="student-panel-my-account-first-name">Imię</label><br>
+                    <input class="w-100" id="student-panel-my-account-first-name"
+                        name="student-panel-my-account-first-name"><br>
+
+                    <label for="student-panel-my-account-last-name">Nazwisko</label><br>
+                    <input class="w-100" id="student-panel-my-account-last-name"
+                        name="student-panel-my-account-last-name"><br>
+
+                    <div class="d-flex flex-column justify-content-center align-items-center m-2">
+                        <button type="submit" class="btn btn-info text-white fw-bold m-2 submit"
+                            id="student-panel-my-account-submit">Edytuj wybrane
+                            dane</button>
+                        <button type="submit" class="btn btn-danger text-white fw-bold m-2"
+                            id="student-panel-my-account-delete-account">USUŃ
+                            KONTO</button>
+                    </div>
+                    <div class="error" id="student-panel-my-account-all-error"></div>
+
+                    <!-- <button id="editUser-return-admin-users">Powrót</button> -->
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="student-panel-script.js"></script>
+
+</body>
+
+</html>

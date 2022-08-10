@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(215, 236, 255) !important;
+}
+
+/* .container {
+    font-family: arial;
+    font-size: 12px;
+    outline: dashed 1px black;
+    position: relative;
+}
+*/
+
+/* <button id="teacher-panel-next-week-button"></button>
+        <button id="teacher-panel-previous-week-button"></button> */
+
+/* #teacher-panel-next-week-button {
+    
+    height: 100px;
+    width: 100px;
+}
+#student-panel-next-week-button {
+    
+    height: 100px;
+    width: 100px;
+}
+#admin-panel-next-week-button {
+    
+    height: 100px;
+    width: 100px;
+}
+
+#teacher-panel-previous-week-button {
+    height: 100px;
+    width: 100px;
+}
+#student-panel-previous-week-button {
+    height: 100px;
+    width: 100px;
+}
+#admin-panel-previous-week-button{
+    height: 100px;
+    width: 100px;
+}
+
+#password-error {
+    font-family: arial;
+    font-size: 24px;
+}
+
+#registration-form {
+	/* width: 50px; */
+/* height: 50px; */
+/* background-color: red; */
+/* Center vertically and horizontally */
+/* position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px; */
+/* Apply negative top and left margins to truly center the element */
+}
+
+/* .error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+#course-details-icon-for-collapse {
+    width: 5%;
+    height: auto;
+} */
+
+.course-all-modules-sections-section-elements-content {
+    background-color: #6c9191;
+    margin: 5px;
+    width: 50%;
+}
+
+.course-all-modules-sections-section-elements-containers {
+    background-color: lightskyblue;
+    margin-bottom: 10px;
+}
+
+.course-all-modules-sections-modules-all-sections-div {
+    margin-bottom: 40px;
+}
+
+.course-all-modules-sections-modules-main-containers {
+    background-color: #f0ffff;
+    margin-bottom: 80px;
+    outline: solid 3px #f0ffff;
+}
+
+.course-all-modules-sections-module-order-selects {
+    background-color: lightblue;
+    padding: 1em;
+    margin: 5em;
+}
+
+.course-all-modules-sections-section-main-containers {
+    background-color: lightblue;
+    font-weight: bold;
+    text-align: center;
+    padding: 1em;
+    margin: 5em;
+}
+
+.course-all-modules-sections-section-elements-content img {
+    width: 70%;
+}
+
+.course-all-modules-sections-modules-main-containers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    font-weight: bold;
+}
+
+.course-all-modules-sections-section-elements-content {}

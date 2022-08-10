@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Online Courses System</title>
+
+</head>
+
+<body>
+    <h1 class="text-center mt-5 text-primary">Online Courses System</h1>
+    <div class="d-flex flex-column justify-content-center align-items-center p-5 m-5 bg-primary border border-3 border-light container-log-in">
+        <div class="">
+            <form action="" id="log-in-form" class="d-flex flex-column justify-content-center align-items-center">
+                <label class="fs-4 fw-bold text-white" for="email">E-mail</label><br>
+                <input id="email-log-in" name="email-log-in"><br>
+                <div class="error" id="email-log-in-error"></div>
+
+                <label class="fs-4 fw-bold text-white" for="password">Hasło</label><br>
+                <input type="password" id="password-log-in" name="password-log-in" required>
+                <div class="text-white m-1 error" id="password-log-in-error"></div><br>
+                    
+                <button type="submit" class="submit text-white fw-bold mt-2 btn btn-info w-20" id="submit">Zaloguj</button>
+
+            </form>
+        </div>
+        <div class="container-register p-3">
+            <button class="btn btn-info w-100 fw-bold text-white" onclick="document.location='/register.html'">Nie masz konta? Załóż
+                je!</button>
+        </div>
+        
+    </div>
+    <script type="module" src="log-in-script.js"></script>
+</body>
+
+
+</html>
